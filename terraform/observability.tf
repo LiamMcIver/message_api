@@ -32,7 +32,7 @@ resource "azurerm_monitor_action_group" "this" {
 
 # ─── Alert Rule — HTTP 5xx errors on the Function App ────────────────────────
 
-resource "azurerm_monitor_metric_alert" "function_5xx" {
+resource "azurerm_monitor_metric_alert" "function_count" {
   name                = local.alert_name
   resource_group_name = azurerm_resource_group.this.name
   scopes              = [azurerm_function_app_flex_consumption.this.id]
@@ -44,7 +44,7 @@ resource "azurerm_monitor_metric_alert" "function_5xx" {
 
   criteria {
     metric_namespace = "Microsoft.Web/sites"
-    metric_name      = "Requests"
+    metric_name      = "OnDemandFunctionExecutionCount"
     aggregation      = "Total"
     operator         = "GreaterThan"
     threshold        = 5
