@@ -19,7 +19,7 @@ resource "azurerm_subnet" "function_integration" {
   delegation {
     name = "function-app-delegation"
     service_delegation {
-      name    = "Microsoft.Web/environments"
+      name    = "Microsoft.App/environments"
       actions = ["Microsoft.Network/virtualNetworks/subnets/action"]
     }
   }
