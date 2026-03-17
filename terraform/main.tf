@@ -16,7 +16,7 @@ terraform {
     }
   }
 
-    backend "azurerm" {
+  backend "azurerm" {
     resource_group_name  = "rg-terraform-state"
     storage_account_name = "messagetfstate"
     container_name       = "tfstate"
