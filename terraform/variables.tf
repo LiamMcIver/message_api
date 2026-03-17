@@ -34,12 +34,6 @@ variable "subnet_private_endpoints_cidr" {
   default     = "10.0.2.0/24"
 }
 
-variable "subnet_cloud_shell_cidr" {
-  type        = string
-  description = "CIDR for the cloud shell"
-  default     = "10.0.4.0/24"
-}
-
 variable "alert_email" {
   type        = string
   description = "Email address for monitoring alerts"

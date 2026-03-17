@@ -115,7 +115,7 @@ resource "azurerm_linux_virtual_machine" "jumpbox" {
   name                            = "${local.prefix}-jumpbox-vm"
   location                        = azurerm_resource_group.this.location
   resource_group_name             = azurerm_resource_group.this.name
-  size                            = "Standard_D2ads_v6"
+  size                            = "Standard_B2ats_v2"
   admin_username                  = "azureuser"
   disable_password_authentication = true
   network_interface_ids           = [azurerm_network_interface.jumpbox.id]
