@@ -35,7 +35,7 @@ resource "azurerm_monitor_action_group" "this" {
 resource "azurerm_monitor_metric_alert" "function_5xx" {
   name                = local.alert_name
   resource_group_name = azurerm_resource_group.this.name
-  scopes              = [azurerm_linux_function_app.this.id]
+  scopes              = [azurerm_function_app_flex_consumption.this.id]
   description         = "Alert when Function App returns HTTP 5xx errors"
   severity            = 2
   frequency           = "PT5M"

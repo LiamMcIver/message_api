@@ -24,8 +24,8 @@ resource "azurerm_function_app_flex_consumption" "this" {
 
   runtime_name           = "python"
   runtime_version        = "3.11"
-  maximum_instance_count = 10
-  instance_memory_in_mb  = 2048
+  maximum_instance_count = 40
+  instance_memory_in_mb  = 512
 
   virtual_network_subnet_id = azurerm_subnet.function_integration.id
 
