@@ -32,9 +32,9 @@ resource "azurerm_function_app_flex_consumption" "this" {
   identity {
     type = "SystemAssigned"
   }
-site_config {
-  
-}
+  site_config {
+
+  }
   app_settings = {
     "APPLICATIONINSIGHTS_CONNECTION_STRING" = azurerm_application_insights.this.connection_string
   }
