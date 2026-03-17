@@ -10,7 +10,7 @@ resource "tls_self_signed_cert" "ca" {
 
   subject {
     common_name         = "${local.prefix} Internal CA"
-    organization        = "Checkout.com"
+    organization        = "TestOrg"
     organizational_unit = "Cloud Platform"
   }
 
@@ -37,7 +37,7 @@ resource "tls_cert_request" "client" {
 
   subject {
     common_name         = "${local.prefix}-client"
-    organization        = "Checkout.com"
+    organization        = "TestOrg"
     organizational_unit = "Cloud Platform"
   }
 }
