@@ -13,7 +13,7 @@ variable "environment" {
 variable "location" {
   type        = string
   description = "Azure region for all resources"
-  default     = "westeurope"
+  default     = "uksouth"
 }
 
 variable "vnet_address_space" {

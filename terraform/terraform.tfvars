@@ -1,6 +1,6 @@
 project     = "message-api"
 environment = "dev"
-location    = "westeurope"
+location    = "uksouth"
 
 subscription_id = "d6015d79-a228-435a-b5b4-05c83a11d1ca"
 
