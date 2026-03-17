@@ -10,7 +10,7 @@ output "vnet_id" {
 
 output "function_app_hostname" {
   description = "Default hostname of the Function App (private — only reachable within VNet)"
-  value       = azurerm_linux_function_app.this.default_hostname
+  value       = azurerm_function_app_flex_consumption.this.default_hostname
 }
 
 output "function_app_private_endpoint_ip" {
@@ -20,7 +20,7 @@ output "function_app_private_endpoint_ip" {
 
 output "function_app_identity_principal_id" {
   description = "Principal ID of the Function App system-assigned managed identity"
-  value       = azurerm_linux_function_app.this.identity[0].principal_id
+  value       = azurerm_function_app_flex_consumption.this.identity[0].principal_id
 }
 
 output "key_vault_uri" {

@@ -166,4 +166,5 @@ This project was developed with assistance from Claude (Anthropic). The followin
 - `WEBSITE_CONTENTSHARE`, `WEBSITE_RUN_FROM_PACKAGE`, and other legacy app settings were included in the initial output but are unsupported on Flex Consumption and would cause deployment errors.
 - The storage account access key is passed directly to the function app resource. In production this would be replaced with Managed Identity authentication to avoid credentials in Terraform state.
 - CA and client private keys are stored in Terraform state in plaintext as a result of using the `tls` provider. In production these would be generated outside Terraform and imported, or managed via a dedicated secrets management workflow.
+- After amending SKU, needed to replace all references to `azurerm_linux_function_app` with `azurerm_function_app_flex_consumption`
 - This README file was also generated from notes that I had made throughout the process of this 
