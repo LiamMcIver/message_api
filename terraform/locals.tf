@@ -4,7 +4,7 @@ locals {
   # Resource names
   resource_group_name = "${local.prefix}-rg"
   vnet_name           = "${local.prefix}-vnet"
-  kv_name             = "${local.prefix}-akv"
+  kv_name             = "${local.prefix}-akv2"
   law_name            = "${local.prefix}-law"
   app_insights_name   = "${local.prefix}-ai"
   function_name       = "${local.prefix}-func"
