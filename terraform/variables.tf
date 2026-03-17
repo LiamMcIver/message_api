@@ -50,3 +50,13 @@ variable "subscription_id" {
   type        = string
   description = "Azure subscription ID"
 }
+
+variable "jumpbox_ssh_public_key" {
+  type        = string
+  description = "SSH public key for jumpbox admin access"
+}
+
+variable "jumpbox_allowed_ip" {
+  type        = string
+  description = "Your public IP address allowed to SSH to the jumpbox (e.g. 1.2.3.4/32)"
+}
