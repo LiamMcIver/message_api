@@ -54,8 +54,3 @@ resource "azurerm_monitor_metric_alert" "function_5xx" {
     action_group_id = azurerm_monitor_action_group.this.id
   }
 }
-
-
-resource "azurerm_metric" "name" {
-
-}
