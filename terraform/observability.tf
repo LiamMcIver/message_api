@@ -57,5 +57,5 @@ resource "azurerm_monitor_metric_alert" "function_5xx" {
 
 
 resource "azurerm_metric" "name" {
-  
+
 }
