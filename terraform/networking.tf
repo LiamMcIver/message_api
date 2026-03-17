@@ -36,6 +36,21 @@ resource "azurerm_subnet" "private_endpoints" {
   private_endpoint_network_policies = "Disabled"
 }
 
+resource "azurerm_subnet" "cloud_shell" {
+  name                 = "${local.prefix}-snet-cloudshell"
+  resource_group_name  = azurerm_resource_group.this.name
+  virtual_network_name = azurerm_virtual_network.this.name
+  address_prefixes     = ["10.0.4.0/24"]
+
+  delegation {
+    name = "cloud-shell-delegation"
+    service_delegation {
+      name    = "Microsoft.ContainerInstance/containerGroups"
+      actions = ["Microsoft.Network/virtualNetworks/subnets/action"]
+    }
+  }
+}
+
 # ─── Network Security Groups 
 
 resource "azurerm_network_security_group" "function_integration" {
