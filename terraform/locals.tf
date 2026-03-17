@@ -4,12 +4,12 @@ locals {
   # Resource names
   resource_group_name = "${local.prefix}-rg"
   vnet_name           = "${local.prefix}-vnet"
-  kv_name             = "${local.prefix}-kv"
+  kv_name             = "${local.prefix}-kv2"
   law_name            = "${local.prefix}-law"
   app_insights_name   = "${local.prefix}-ai"
   function_name       = "${local.prefix}-func"
   service_plan_name   = "${local.prefix}-asp"
-  alert_name          = "${local.prefix}-alert-5xx"
+  alert_name          = "${local.prefix}-alert-execution"
   action_group_name   = "${local.prefix}-ag"
 
   # Storage accounts: lowercase, no hyphens, max 24 chars
