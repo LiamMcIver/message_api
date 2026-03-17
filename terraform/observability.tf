@@ -36,7 +36,7 @@ resource "azurerm_monitor_metric_alert" "function_5xx" {
   name                = local.alert_name
   resource_group_name = azurerm_resource_group.this.name
   scopes              = [azurerm_function_app_flex_consumption.this.id]
-  description         = "Alert when Function App returns HTTP 5xx errors"
+  description         = "Alert when Function App requests exceed threshold"
   severity            = 2
   frequency           = "PT5M"
   window_size         = "PT15M"
@@ -44,7 +44,7 @@ resource "azurerm_monitor_metric_alert" "function_5xx" {
 
   criteria {
     metric_namespace = "Microsoft.Web/sites"
-    metric_name      = "Http5xx"
+    metric_name      = "Requests"
     aggregation      = "Total"
     operator         = "GreaterThan"
     threshold        = 5
@@ -53,4 +53,9 @@ resource "azurerm_monitor_metric_alert" "function_5xx" {
   action {
     action_group_id = azurerm_monitor_action_group.this.id
   }
+}
+
+
+resource "azurerm_metric" "name" {
+  
 }
