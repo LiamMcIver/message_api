@@ -12,11 +12,13 @@ resource "azurerm_service_plan" "this" {
 # ─── Function App
 
 resource "azurerm_function_app_flex_consumption" "this" {
-  name                    = local.function_name
-  location                = azurerm_resource_group.this.location
-  resource_group_name     = azurerm_resource_group.this.name
-  service_plan_id         = azurerm_service_plan.this.id
-  client_certificate_mode = "Required"
+  name                       = local.function_name
+  location                   = azurerm_resource_group.this.location
+  resource_group_name        = azurerm_resource_group.this.name
+  service_plan_id            = azurerm_service_plan.this.id
+  client_certificate_enabled = true
+  client_certificate_mode    = "Required"
+
 
   storage_container_type      = "blobContainer"
   storage_container_endpoint  = "${azurerm_storage_account.function_app.primary_blob_endpoint}${azurerm_storage_container.function_deployment.name}"
